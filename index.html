@@ -28,22 +28,16 @@
       text-align: center;
       font-size: 3em;
       font-weight: bold;
-      color: #38bdf8;
+      color: #fcd34d; /* 橘焰暗金 */
       margin-bottom: 30px;
-      text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
-      background: linear-gradient(to right, #38bdf8, #0ea5e9);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 2s ease-in-out infinite alternate;
+      text-shadow: 1px 1px 4px #78350f;
     }
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
-      }
-      to {
-        text-shadow: 0 0 20px #7dd3fc, 0 0 40px #0ea5e9;
-      }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
     }
 
     .container {
@@ -51,14 +45,14 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
     }
 
     .section {
       width: 300px;
     }
 
-    .section h2 {
+    .section h2,
+    .password-block h2 {
       font-size: 1.5em;
       color: #7dd3fc;
       border-bottom: 1px solid #3b82f6;
@@ -91,15 +85,10 @@
     }
 
     .password-block {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .password-block h2 {
-      font-size: 1.5em;
-      color: #7dd3fc;
-      border-bottom: 1px solid #3b82f6;
-      margin-bottom: 16px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(300px * 3 + 60px);
     }
 
     .password-hint {
@@ -120,41 +109,37 @@
 <body>
   <h1>🚀 數碼寶貝連結大廳</h1>
 
-  <div class="container">
-    <!-- 店內營運 -->
-    <div class="section">
-      <h2>🏪 店內營運</h2>
-      <div class="link-item"><a href="#">📦 預購待取</a></div>
-      <div class="link-item"><a href="#">🎯 自訂賽事網站</a></div>
-      <div class="link-item"><a href="#">🧾 會員表單</a></div>
-      <div class="link-item"><a href="#">🎲 桌遊價格</a></div>
-      <div class="link-item"><a href="#">📝 待辦事項</a></div>
+  <div class="wrapper">
+    <div class="container">
+      <!-- 店內營運 -->
+      <div class="section">
+        <h2>🏪 店內營運</h2>
+        <div class="link-item"><a href="#">📦 預購待取</a></div>
+        <div class="link-item"><a href="#">🧾 會員表單</a></div>
+        <div class="link-item"><a href="#">🎲 桌遊價格</a></div>
+        <div class="link-item"><a href="#">📝 待辦事項</a></div>
+        <div class="link-item"><a href="#">🛒 雲湧購物網</a></div>
+      </div>
+
+      <!-- 賽事回報 -->
+      <div class="section">
+        <h2>📝 賽事回報</h2>
+        <div class="link-item"><a href="#">🎯 自訂賽事網站</a></div>
+        <div class="link-item"><a href="#">🧢 寶可夢活動回報</a></div>
+        <div class="link-item"><a href="#">🃏 萬代 TCG+</a></div>
+        <div class="link-item"><a href="#">🌐 GA 賽事網</a></div>
+      </div>
     </div>
 
-    <!-- 賽事回報 -->
-    <div class="section">
-      <h2>📝 賽事回報</h2>
-      <div class="link-item"><a href="#">🧢 寶可夢活動回報</a></div>
-      <div class="link-item"><a href="#">🃏 萬代 TCG+</a></div>
-    </div>
-
-    <!-- 可擴充第三區塊 -->
-    <!--
-    <div class="section">
-      <h2>📚 第三區塊</h2>
-      <div class="link-item"><a href="#">🔗 範例連結</a></div>
-    </div>
-    -->
-  </div>
-
-  <!-- 密碼總表 -->
-  <div class="password-block">
-    <h2>🔐 密碼總表</h2>
-    <div class="link-item">
-      <a href="https://docs.google.com/spreadsheets/d/你的試算表ID/view" target="_blank">
-        🔑 密碼總表（Google Sheet，需登入）
-      </a>
-      <span class="password-hint">🗝️ 僅限本人或授權帳號可存取</span>
+    <!-- 密碼總表 -->
+    <div class="password-block">
+      <h2>🔐 密碼總表</h2>
+      <div class="link-item">
+        <a href="https://docs.google.com/spreadsheets/d/你的試算表ID/view" target="_blank">
+          🔑 密碼總表（Google Sheet，需登入）
+        </a>
+        <span class="password-hint">🗝️ 僅限本人或授權帳號可存取</span>
+      </div>
     </div>
   </div>
 
