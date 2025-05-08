@@ -10,9 +10,6 @@
       padding: 40px;
       color: #e2e8f0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       background-image: url('https://hk.digimoncard.com/images/products/goods/tamers-evolution-box/pc/mv.png?250318');
       background-size: cover;
       background-position: center;
@@ -28,6 +25,7 @@
     }
 
     h1 {
+      text-align: center;
       font-size: 3em;
       font-weight: bold;
       color: #38bdf8;
@@ -39,15 +37,6 @@
       animation: glow 2s ease-in-out infinite alternate;
     }
 
-    h2 {
-      font-size: 1.5em;
-      color: #7dd3fc;
-      border-bottom: 1px solid #3b82f6;
-      margin: 40px 0 20px;
-      width: 100%;
-      max-width: 600px;
-    }
-
     @keyframes glow {
       from {
         text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
@@ -57,28 +46,40 @@
       }
     }
 
-    .links {
-      width: 100%;
-      max-width: 600px;
+    .container {
       display: flex;
-      flex-direction: column;
-      gap: 18px;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      width: 300px;
+    }
+
+    .section h2 {
+      font-size: 1.5em;
+      color: #7dd3fc;
+      border-bottom: 1px solid #3b82f6;
+      margin-bottom: 16px;
     }
 
     .link-item {
       background: #334155;
       border: 2px solid #94a3b8;
       border-radius: 12px;
-      padding: 18px 25px;
+      padding: 14px 20px;
       text-align: left;
+      margin-bottom: 15px;
       box-shadow: inset 0 0 5px #0f172a;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .link-item a {
       text-decoration: none;
       color: #ffffff;
-      font-size: 1.25em;
+      font-size: 1.1em;
       font-weight: bold;
       display: block;
     }
@@ -89,6 +90,18 @@
       box-shadow: 0 0 15px #38bdf8cc;
     }
 
+    .password-block {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .password-block h2 {
+      font-size: 1.5em;
+      color: #7dd3fc;
+      border-bottom: 1px solid #3b82f6;
+      margin-bottom: 16px;
+    }
+
     .password-hint {
       font-size: 0.95em;
       color: #cbd5e1;
@@ -97,6 +110,7 @@
     }
 
     footer {
+      text-align: center;
       margin-top: 60px;
       font-size: 0.9em;
       color: #94a3b8;
@@ -106,37 +120,36 @@
 <body>
   <h1>🚀 數碼寶貝連結大廳</h1>
 
-  <h2>🏪 店內營運</h2>
-  <div class="links">
-    <div class="link-item">
-      <a href="#" target="_blank">📦 預購待取</a>
+  <div class="container">
+    <!-- 店內營運 -->
+    <div class="section">
+      <h2>🏪 店內營運</h2>
+      <div class="link-item"><a href="#">📦 預購待取</a></div>
+      <div class="link-item"><a href="#">🎯 自訂賽事網站</a></div>
+      <div class="link-item"><a href="#">🧾 會員表單</a></div>
+      <div class="link-item"><a href="#">🎲 桌遊價格</a></div>
+      <div class="link-item"><a href="#">📝 待辦事項</a></div>
     </div>
-    <div class="link-item">
-      <a href="#" target="_blank">🎯 自訂賽事網站</a>
+
+    <!-- 賽事回報 -->
+    <div class="section">
+      <h2>📝 賽事回報</h2>
+      <div class="link-item"><a href="#">🧢 寶可夢活動回報</a></div>
+      <div class="link-item"><a href="#">🃏 萬代 TCG+</a></div>
     </div>
-    <div class="link-item">
-      <a href="#" target="_blank">🧾 會員表單</a>
+
+    <!-- 可擴充第三區塊 -->
+    <!--
+    <div class="section">
+      <h2>📚 第三區塊</h2>
+      <div class="link-item"><a href="#">🔗 範例連結</a></div>
     </div>
-    <div class="link-item">
-      <a href="#" target="_blank">🎲 桌遊價格</a>
-    </div>
-    <div class="link-item">
-      <a href="#" target="_blank">📝 待辦事項</a>
-    </div>
+    -->
   </div>
 
-  <h2>📝 賽事回報</h2>
-  <div class="links">
-    <div class="link-item">
-      <a href="#" target="_blank">🧢 寶可夢活動回報</a>
-    </div>
-    <div class="link-item">
-      <a href="#" target="_blank">🃏 萬代 TCG+</a>
-    </div>
-  </div>
-
-  <h2>🔐 密碼總表</h2>
-  <div class="links">
+  <!-- 密碼總表 -->
+  <div class="password-block">
+    <h2>🔐 密碼總表</h2>
     <div class="link-item">
       <a href="https://docs.google.com/spreadsheets/d/你的試算表ID/view" target="_blank">
         🔑 密碼總表（Google Sheet，需登入）
