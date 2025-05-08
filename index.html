@@ -28,7 +28,7 @@
       text-align: center;
       font-size: 3em;
       font-weight: bold;
-      color: #fcd34d; /* 橘焰暗金 */
+      color: #fcd34d;
       margin-bottom: 30px;
       text-shadow: 1px 1px 4px #78350f;
     }
@@ -40,11 +40,13 @@
       gap: 40px;
     }
 
-    .container {
+    .group {
       display: flex;
-      justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 960px;
     }
 
     .section {
@@ -86,9 +88,7 @@
 
     .password-block {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      max-width: calc(300px * 3 + 60px);
+      max-width: 960px;
     }
 
     .password-hint {
@@ -107,38 +107,38 @@
   </style>
 </head>
 <body>
-  <h1>🚀 數碼寶貝連結大廳</h1>
+  <h1>數碼寶貝連結大廳</h1>
 
   <div class="wrapper">
-    <div class="container">
+    <div class="group">
       <!-- 店內營運 -->
       <div class="section">
-        <h2>🏪 店內營運</h2>
-        <div class="link-item"><a href="#">📦 預購待取</a></div>
-        <div class="link-item"><a href="#">🧾 會員表單</a></div>
-        <div class="link-item"><a href="#">🎲 桌遊價格</a></div>
-        <div class="link-item"><a href="#">📝 待辦事項</a></div>
-        <div class="link-item"><a href="#">🛒 雲湧購物網</a></div>
+        <h2>店內營運</h2>
+        <div class="link-item"><a href="#">預購待取</a></div>
+        <div class="link-item"><a href="#">會員表單</a></div>
+        <div class="link-item"><a href="#">桌遊價格</a></div>
+        <div class="link-item"><a href="#">待辦事項</a></div>
+        <div class="link-item"><a href="#">雲湧購物網</a></div>
       </div>
 
       <!-- 賽事回報 -->
       <div class="section">
-        <h2>📝 賽事回報</h2>
-        <div class="link-item"><a href="#">🎯 自訂賽事網站</a></div>
-        <div class="link-item"><a href="#">🧢 寶可夢活動回報</a></div>
-        <div class="link-item"><a href="#">🃏 萬代 TCG+</a></div>
-        <div class="link-item"><a href="#">🌐 GA 賽事網</a></div>
+        <h2>賽事回報</h2>
+        <div class="link-item"><a href="#">自訂賽事網站</a></div>
+        <div class="link-item"><a href="#">寶可夢活動回報</a></div>
+        <div class="link-item"><a href="#">萬代 TCG+</a></div>
+        <div class="link-item"><a href="#">GA 賽事網</a></div>
       </div>
     </div>
 
     <!-- 密碼總表 -->
     <div class="password-block">
-      <h2>🔐 密碼總表</h2>
+      <h2>密碼總表</h2>
       <div class="link-item">
         <a href="https://docs.google.com/spreadsheets/d/你的試算表ID/view" target="_blank">
-          🔑 密碼總表（Google Sheet，需登入）
+          密碼總表（Google Sheet，需登入）
         </a>
-        <span class="password-hint">🗝️ 僅限本人或授權帳號可存取</span>
+        <span class="password-hint">僅限本人或授權帳號可存取</span>
       </div>
     </div>
   </div>
