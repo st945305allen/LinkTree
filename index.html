@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>常用連結</title>
-  <link rel="icon" href="https://st945305allen.github.io/LinkTree/favicon.png" type="image/png" />
+  <link rel="icon" href="./favicon.png" type="image/png" />
   <style>
     body {
       margin: 0;
@@ -87,40 +86,6 @@
       transform: scale(1.02);
       box-shadow: 0 0 15px #38bdf8cc;
     }
-    .floating-password {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #334155;
-      border: 2px solid #94a3b8;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 10px #0f172a;
-      transition: background 0.3s;
-      z-index: 1000;
-      cursor: pointer;
-    }
-    .floating-password:hover {
-      background: #475569;
-    }
-    .sheet-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 90%;
-      max-width: 640px;
-      height: 400px;
-      border: 2px solid #94a3b8;
-      border-radius: 12px;
-      background: #fff;
-      z-index: 999;
-      overflow: hidden;
-      box-shadow: 0 0 15px #0f172a;
-    }
     footer {
       text-align: center;
       margin-top: 60px;
@@ -130,43 +95,25 @@
   </style>
 </head>
 <body>
-  <div class="floating-password" onclick="toggleSheetFrame()">🗝️</div>
-  <div id="sheet-frame" class="sheet-container" style="display: none;">
-    <iframe src="https://docs.google.com/spreadsheets/d/你的試算表ID/edit?usp=sharing" width="100%" height="100%" frameborder="0"></iframe>
-  </div>
-
   <h1>常用連結</h1>
-
   <div class="container">
     <div class="wrapper">
       <div class="group">
         <div class="section">
-          <h2>店內營運</h2>
-          <div class="link-item"><a href="https://docs.google.com/spreadsheets/d/1lWBEbnCbAI5rxZZRJxeaU_nofaOlkSl34AnECyyPDH0/edit?usp=sharing" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://docs.google.com">預購待取</a></div>
-          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">會員表單</a></div>
-          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">桌遊價格</a></div>
-          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">待辦事項</a></div>
-          <div class="link-item"><a href="https://www.yunyong.com.tw" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://www.yunyong.com.tw">雲湧購物網</a></div>
-        </div>
+<h2>店內營運</h2>
+<div class="link-item"><a href="https://docs.google.com/spreadsheets/d/1lWBEbnCbAI5rxZZRJxeaU_nofaOlkSl34AnECyyPDH0/edit?gid=0#gid=0" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://docs.google.com">預購待取</a></div>
+<div class="link-item"><a href="https://docs.google.com/spreadsheets/d/1y79KRFTH-tM4BylTvQI2-nMXSJpmEY-kwOGByoz2Ge4/edit?usp=sharing" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://docs.google.com">會員表單</a></div>
+<div class="link-item"><a href="https://docs.google.com/spreadsheets/d/1VukN9_0hQ2Es0w8vrJrn9ih4vm1cxJjXlVAE2hXEdm8/edit?usp=sharing" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://docs.google.com">桌遊價格</a></div>
+</div>
+<div class="section">
+<h2>賽事回報</h2>
+<div class="link-item"><a href="https://challonge.com/zh_CN/dashboard" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://challonge.com">自訂賽事網站</a></div>
+<div class="link-item"><a href="https://distributor.bandai-tcg-plus.com/#/event_series_list?default=true" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://distributor.bandai-tcg-plus.com">萬代 TCG+</a></div>
+</div>
 
-        <div class="section">
-          <h2>賽事回報</h2>
-          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">自訂賽事網站</a></div>
-          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">寶可夢活動回報</a></div>
-          <div class="link-item"><a href="https://www.bandai-tcgplus.com" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://www.bandai-tcgplus.com">萬代 TCG+</a></div>
-          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">GA 賽事網</a></div>
-        </div>
       </div>
     </div>
   </div>
-
   <footer>© 2025 翻轉點子 | Powered by GitHub Pages</footer>
-
-  <script>
-    function toggleSheetFrame() {
-      const frame = document.getElementById("sheet-frame");
-      frame.style.display = (frame.style.display === "none") ? "block" : "none";
-    }
-  </script>
 </body>
 </html>
