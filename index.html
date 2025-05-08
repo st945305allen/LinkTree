@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>常用連結</title>
   <style>
     body {
@@ -80,6 +80,32 @@
       box-shadow: 0 0 15px #38bdf8cc;
     }
 
+    .password-section {
+      margin-top: 8px;
+    }
+
+    .password-section button {
+      background: #64748b;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85em;
+    }
+
+    .password {
+      margin-left: 10px;
+      font-family: monospace;
+      background: #1e293b;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
     footer {
       margin-top: 50px;
       font-size: 0.9em;
@@ -90,11 +116,44 @@
 <body>
   <h1>🚀 數碼寶貝連結大廳</h1>
   <div class="links">
-    <div class="link-item"><a href="https://mail.google.com/" target="_blank">📧 Gmail</a></div>
-    <div class="link-item"><a href="https://calendar.google.com/" target="_blank">📅 Google Calendar</a></div>
-    <div class="link-item"><a href="https://github.com/" target="_blank">💻 GitHub</a></div>
-    <div class="link-item"><a href="https://chat.openai.com/" target="_blank">🤖 ChatGPT</a></div>
+    <div class="link-item">
+      <a href="https://mail.google.com/" target="_blank">📧 Gmail</a>
+      <div class="password-section">
+        <button onclick="togglePassword(this)">顯示密碼</button>
+        <span class="password hidden">GmailPass123!</span>
+      </div>
+    </div>
+
+    <div class="link-item">
+      <a href="https://github.com/" target="_blank">💻 GitHub</a>
+      <div class="password-section">
+        <button onclick="togglePassword(this)">顯示密碼</button>
+        <span class="password hidden">myGitSecret</span>
+      </div>
+    </div>
+
+    <div class="link-item">
+      <a href="https://chat.openai.com/" target="_blank">🤖 ChatGPT</a>
+      <div class="password-section">
+        <button onclick="togglePassword(this)">顯示密碼</button>
+        <span class="password hidden">chatgpt!456</span>
+      </div>
+    </div>
   </div>
+
   <footer>© 2025 翻轉點子 | Powered by GitHub Pages</footer>
+
+  <script>
+    function togglePassword(button) {
+      const pw = button.nextElementSibling;
+      if (pw.classList.contains('hidden')) {
+        pw.classList.remove('hidden');
+        button.textContent = '隱藏密碼';
+      } else {
+        pw.classList.add('hidden');
+        button.textContent = '顯示密碼';
+      }
+    }
+  </script>
 </body>
 </html>
