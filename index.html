@@ -6,14 +6,26 @@
   <title>常用連結</title>
   <style>
     body {
-      background-color: #0f172a;
-      color: #e2e8f0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 40px;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-image: url('https://hk.digimoncard.com/images/products/goods/tamers-evolution-box/pc/mv.png?250318');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* 加濾鏡提升可讀性 */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
     }
 
     h1 {
@@ -56,7 +68,7 @@
     footer {
       margin-top: 50px;
       font-size: 0.9em;
-      color: #64748b;
+      color: #94a3b8;
     }
   </style>
 </head>
@@ -68,6 +80,6 @@
     <div class="link-item"><a href="https://github.com/" target="_blank">💻 GitHub</a></div>
     <div class="link-item"><a href="https://chat.openai.com/" target="_blank">🤖 ChatGPT</a></div>
   </div>
-  <footer>© 2025 by Me | Powered by GitHub Pages</footer>
+  <footer>© 2025 翻轉點子 | Powered by GitHub Pages</footer>
 </body>
 </html>
