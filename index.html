@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>常用連結</title>
-  <link rel="icon" href="./favicon.png" type="image/png" />
+  <link rel="icon" href="https://st945305allen.github.io/LinkTree/favicon.png" type="image/png" />
   <style>
     body {
       margin: 0;
@@ -16,7 +17,6 @@
       background-position: center;
       background-attachment: fixed;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -24,7 +24,6 @@
       background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
-
     h1 {
       text-align: center;
       font-size: 3em;
@@ -33,14 +32,16 @@
       margin-bottom: 30px;
       text-shadow: 1px 1px 4px #78350f;
     }
-
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
     .wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 40px;
     }
-
     .group {
       display: flex;
       gap: 30px;
@@ -49,18 +50,15 @@
       width: 100%;
       max-width: 960px;
     }
-
     .section {
       width: 300px;
     }
-
     .section h2 {
       font-size: 1.5em;
       color: #7dd3fc;
       border-bottom: 1px solid #3b82f6;
       margin-bottom: 16px;
     }
-
     .link-item {
       background: #334155;
       border: 2px solid #94a3b8;
@@ -71,7 +69,6 @@
       box-shadow: inset 0 0 5px #0f172a;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .link-item a {
       text-decoration: none;
       color: #ffffff;
@@ -80,19 +77,16 @@
       display: flex;
       align-items: center;
     }
-
     .link-item img {
       width: 16px;
       height: 16px;
       margin-right: 8px;
     }
-
     .link-item:hover {
       background: #475569;
       transform: scale(1.02);
       box-shadow: 0 0 15px #38bdf8cc;
     }
-
     .floating-password {
       position: fixed;
       top: 20px;
@@ -110,11 +104,9 @@
       z-index: 1000;
       cursor: pointer;
     }
-
     .floating-password:hover {
       background: #475569;
     }
-
     .sheet-container {
       position: fixed;
       bottom: 20px;
@@ -129,7 +121,6 @@
       overflow: hidden;
       box-shadow: 0 0 15px #0f172a;
     }
-
     footer {
       text-align: center;
       margin-top: 60px;
@@ -139,41 +130,32 @@
   </style>
 </head>
 <body>
-
-  <!-- 浮動鑰匙圖示 -->
-  <div class="floating-password" onclick="toggleSheetFrame()">
-    🗝️
-  </div>
-
-  <!-- Google Sheet 編輯 iframe -->
+  <div class="floating-password" onclick="toggleSheetFrame()">🗝️</div>
   <div id="sheet-frame" class="sheet-container" style="display: none;">
-    <iframe
-      src="https://docs.google.com/spreadsheets/d/你的試算表ID/edit?usp=sharing"
-      width="100%" height="100%" frameborder="0">
-    </iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/你的試算表ID/edit?usp=sharing" width="100%" height="100%" frameborder="0"></iframe>
   </div>
 
   <h1>常用連結</h1>
 
-  <div class="wrapper">
-    <div class="group">
-      <!-- 店內營運 -->
-      <div class="section">
-        <h2>店內營運</h2>
-        <div class="link-item"><a href="https://docs.google.com/spreadsheets/d/1lWBEbnCbAI5rxZZRJxeaU_nofaOlkSl34AnECyyPDH0/edit?usp=sharing"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">預購待取</a></div>
-        <div class="link-item"><a href="#"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">會員表單</a></div>
-        <div class="link-item"><a href="#"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">桌遊價格</a></div>
-        <div class="link-item"><a href="#"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">待辦事項</a></div>
-        <div class="link-item"><a href="https://www.yunyong.com.tw"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://www.yunyong.com.tw">雲湧購物網</a></div>
-      </div>
+  <div class="container">
+    <div class="wrapper">
+      <div class="group">
+        <div class="section">
+          <h2>店內營運</h2>
+          <div class="link-item"><a href="https://docs.google.com/spreadsheets/d/1lWBEbnCbAI5rxZZRJxeaU_nofaOlkSl34AnECyyPDH0/edit?usp=sharing" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://docs.google.com">預購待取</a></div>
+          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">會員表單</a></div>
+          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">桌遊價格</a></div>
+          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">待辦事項</a></div>
+          <div class="link-item"><a href="https://www.yunyong.com.tw" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://www.yunyong.com.tw">雲湧購物網</a></div>
+        </div>
 
-      <!-- 賽事回報 -->
-      <div class="section">
-        <h2>賽事回報</h2>
-        <div class="link-item"><a href="#"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">自訂賽事網站</a></div>
-        <div class="link-item"><a href="#"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">寶可夢活動回報</a></div>
-        <div class="link-item"><a href="https://www.bandai-tcgplus.com"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://www.bandai-tcgplus.com">萬代 TCG+</a></div>
-        <div class="link-item"><a href="#"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">GA 賽事網</a></div>
+        <div class="section">
+          <h2>賽事回報</h2>
+          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">自訂賽事網站</a></div>
+          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">寶可夢活動回報</a></div>
+          <div class="link-item"><a href="https://www.bandai-tcgplus.com" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://www.bandai-tcgplus.com">萬代 TCG+</a></div>
+          <div class="link-item"><a href="#" target="_blank"><img src="https://www.google.com/s2/favicons?sz=32&domain_url=https://example.com">GA 賽事網</a></div>
+        </div>
       </div>
     </div>
   </div>
