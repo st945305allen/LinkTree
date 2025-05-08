@@ -84,26 +84,9 @@
       margin-top: 8px;
     }
 
-    .password-section button {
-      background: #64748b;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85em;
-    }
-
-    .password {
-      margin-left: 10px;
-      font-family: monospace;
-      background: #1e293b;
-      padding: 3px 6px;
-      border-radius: 4px;
-    }
-
-    .hidden {
-      display: none;
+    .password-hint {
+      font-size: 0.95em;
+      color: #cbd5e1;
     }
 
     footer {
@@ -119,41 +102,34 @@
     <div class="link-item">
       <a href="https://mail.google.com/" target="_blank">📧 Gmail</a>
       <div class="password-section">
-        <button onclick="togglePassword(this)">顯示密碼</button>
-        <span class="password hidden">GmailPass123!</span>
+        <span class="password-hint">🔒 密碼提示：6 碼生日</span>
       </div>
     </div>
 
     <div class="link-item">
       <a href="https://github.com/" target="_blank">💻 GitHub</a>
       <div class="password-section">
-        <button onclick="togglePassword(this)">顯示密碼</button>
-        <span class="password hidden">myGitSecret</span>
+        <span class="password-hint">🔒 密碼提示：英文名+年份</span>
       </div>
     </div>
 
     <div class="link-item">
       <a href="https://chat.openai.com/" target="_blank">🤖 ChatGPT</a>
       <div class="password-section">
-        <button onclick="togglePassword(this)">顯示密碼</button>
-        <span class="password hidden">chatgpt!456</span>
+        <span class="password-hint">🔒 密碼提示：最常用帳號通用碼</span>
+      </div>
+    </div>
+
+    <div class="link-item">
+      <a href="https://docs.google.com/spreadsheets/d/你的試算表ID/view" target="_blank">
+        🔐 密碼總表（Google Sheet，需登入）
+      </a>
+      <div class="password-section">
+        <span class="password-hint">🗝️ 僅限本人或授權帳號可存取</span>
       </div>
     </div>
   </div>
 
   <footer>© 2025 翻轉點子 | Powered by GitHub Pages</footer>
-
-  <script>
-    function togglePassword(button) {
-      const pw = button.nextElementSibling;
-      if (pw.classList.contains('hidden')) {
-        pw.classList.remove('hidden');
-        button.textContent = '隱藏密碼';
-      } else {
-        pw.classList.add('hidden');
-        button.textContent = '顯示密碼';
-      }
-    }
-  </script>
 </body>
 </html>
