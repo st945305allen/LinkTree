@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>常用連結</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #38bdf8;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 10px;
+    }
+
+    .links {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .link-item {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 15px 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link-item a {
+      text-decoration: none;
+      color: #38bdf8;
+      font-size: 1.2em;
+      display: block;
+    }
+
+    .link-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #38bdf8aa;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔗 常用連結清單</h1>
+  <div class="links">
+    <div class="link-item"><a href="https://mail.google.com/" target="_blank">📧 Gmail</a></div>
+    <div class="link-item"><a href="https://calendar.google.com/" target="_blank">📅 Google Calendar</a></div>
+    <div class="link-item"><a href="https://github.com/" target="_blank">💻 GitHub</a></div>
+    <div class="link-item"><a href="https://chat.openai.com/" target="_blank">🤖 ChatGPT</a></div>
+  </div>
+  <footer>© 2025 by Me | Powered by GitHub Pages</footer>
+</body>
+</html>
