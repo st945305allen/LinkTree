@@ -19,7 +19,6 @@
       background-attachment: fixed;
     }
 
-    /* 加濾鏡提升可讀性 */
     body::before {
       content: "";
       position: fixed;
@@ -29,11 +28,24 @@
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
+      font-weight: bold;
       color: #38bdf8;
       margin-bottom: 30px;
-      border-bottom: 2px solid #38bdf8;
-      padding-bottom: 10px;
+      text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
+      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
+      }
+      to {
+        text-shadow: 0 0 20px #7dd3fc, 0 0 40px #0ea5e9;
+      }
     }
 
     .links {
@@ -41,28 +53,31 @@
       max-width: 600px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 18px;
     }
 
     .link-item {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 10px;
-      padding: 15px 20px;
+      background: #334155;
+      border: 2px solid #94a3b8;
+      border-radius: 12px;
+      padding: 18px 25px;
       text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: inset 0 0 5px #0f172a;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
     }
 
     .link-item a {
       text-decoration: none;
-      color: #38bdf8;
-      font-size: 1.2em;
+      color: #ffffff;
+      font-size: 1.25em;
+      font-weight: bold;
       display: block;
     }
 
     .link-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 10px #38bdf8aa;
+      background: #475569;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #38bdf8cc;
     }
 
     footer {
@@ -73,7 +88,7 @@
   </style>
 </head>
 <body>
-  <h1>🔗 常用連結清單</h1>
+  <h1>🚀 數碼寶貝連結大廳</h1>
   <div class="links">
     <div class="link-item"><a href="https://mail.google.com/" target="_blank">📧 Gmail</a></div>
     <div class="link-item"><a href="https://calendar.google.com/" target="_blank">📅 Google Calendar</a></div>
