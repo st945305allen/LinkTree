@@ -19,7 +19,9 @@
     }
     body::before {
       content: "";
-      position: fixed;
+      position: absolute;
+      top: 20px;
+      left: 20px;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
       z-index: -1;
@@ -88,7 +90,9 @@
       box-shadow: 0 0 15px #38bdf8cc;
     }
     .floating-password {
-      position: fixed;
+      position: absolute;
+      top: 20px;
+      left: 20px;
       top: 20px;
       right: 20px;
       background: #334155;
@@ -108,7 +112,9 @@
       background: #475569;
     }
     .sheet-container {
-      position: fixed;
+      position: absolute;
+      top: 20px;
+      left: 20px;
       bottom: 20px;
       right: 20px;
       width: 90%;
@@ -125,7 +131,9 @@
       box-shadow: 0 0 15px #0f172a;
     }
     #scrollTopBtn {
-      position: fixed;
+      position: absolute;
+      top: 20px;
+      left: 20px;
       bottom: 30px;
       left: 30px;
       z-index: 1000;
@@ -176,8 +184,7 @@
   <div class="floating-password" onclick="toggleSheetFrame()">🗝️</div>
   <div id="sheet-frame" class="sheet-container" style="display: none;">
     <div id="sheet-header" class="sheet-header">密碼總表 <button class="sheet-close-btn" onclick="toggleSheetFrame()">✖</button></div>
-    <iframe
-      src="https://docs.google.com/spreadsheets/d/1Mx5rYmUlGjdSavvT0TIlPBRHZkWsaav6oD8dmQpy4DE/edit?usp=sharing"
+    <iframe src="https://docs.google.com/spreadsheets/d/1Mx5rYmUlGjdSavvT0TIlPBRHZkWsaav6oD8dmQpy4DE/edit?usp=sharing"
       width="100%" height="100%" frameborder="0">
     </iframe>
   </div>
