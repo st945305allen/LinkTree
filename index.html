@@ -111,25 +111,24 @@
     .floating-password:hover {
       background: #475569;
     }
+    
     .sheet-container {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      bottom: 20px;
-      right: 20px;
       width: 90%;
-      max-width: 640px;
-      max-height: 80vh;
-      height: auto;
-      display: flex;
-      flex-direction: column;
+      max-width: 960px;
+      height: 80vh;
       border: 2px solid #94a3b8;
       border-radius: 12px;
       background: #fff;
       z-index: 999;
       overflow: hidden;
       box-shadow: 0 0 15px #0f172a;
+      display: flex;
+      flex-direction: column;
     }
+    
     #scrollTopBtn {
       position: fixed;
       bottom: 20px;
@@ -185,7 +184,7 @@
   <div id="sheet-frame" class="sheet-container" style="display: none;">
     <div id="sheet-header" class="sheet-header">密碼總表 <button class="sheet-close-btn" onclick="toggleSheetFrame()">✖</button></div>
     <iframe src="https://docs.google.com/spreadsheets/d/1Mx5rYmUlGjdSavvT0TIlPBRHZkWsaav6oD8dmQpy4DE/edit?usp=sharing"
-      width="100%" height="100%" frameborder="0">
+      width="100%" height="100%" frameborder="0" style="flex-grow:1; border:none;">
     </iframe>
   </div>
   <button id="scrollTopBtn" onclick="scrollToTop()">⬆ 返回頂部</button>
