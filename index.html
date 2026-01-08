@@ -5,189 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>常用連結</title>
   <link rel="icon" href="./favicon.png" type="image/png" />
-  <style>
-    body {
-      margin: 0;
-      padding: 40px;
-      color: #e2e8f0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('https://hk.digimoncard.com/images/products/goods/tamers-evolution-box/pc/mv.png?250318');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-    }
-    h1 {
-      text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      color: #fcd34d;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 4px #78350f;
-    }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-    .group {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      max-width: 1240px;
-    }
-    .section {
-      width: 280px;
-    }
-    .section h2 {
-      font-size: 1.5em;
-      color: #7dd3fc;
-      border-bottom: 1px solid #3b82f6;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    .link-item {
-      background: #334155;
-      border: 2px solid #94a3b8;
-      border-radius: 12px;
-      padding: 14px 20px;
-      text-align: left;
-      margin-bottom: 15px;
-      box-shadow: inset 0 0 5px #0f172a;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .link-item a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1.1em;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-    }
-    .link-item img {
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-    }
-    .link-item:hover {
-      background: #475569;
-      transform: scale(1.02);
-      box-shadow: 0 0 15px #38bdf8cc;
-    }
-    .floating-password {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      top: 20px;
-      right: 20px;
-      background: #334155;
-      border: 2px solid #94a3b8;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 10px #0f172a;
-      transition: background 0.3s;
-      z-index: 1000;
-      cursor: pointer;
-    }
-    .floating-password:hover {
-      background: #475569;
-    }
-
-    .sheet-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 90%;
-      max-width: 960px;
-      height: 80vh;
-      border: 2px solid #94a3b8;
-      border-radius: 12px;
-      background: #fff;
-      z-index: 999;
-      overflow: hidden;
-      box-shadow: 0 0 15px #0f172a;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      bottom: 30px;
-      left: 30px;
-      z-index: 1000;
-      background-color: #334155;
-      color: #fcd34d;
-      border: 2px solid #94a3b8;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: none;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #94a3b8;
-    }
-
-    .sheet-header {
-      background: #334155;
-      color: #fcd34d;
-      padding: 8px;
-      cursor: move;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-    }
-    .sheet-close-btn {
-      background: #334155;
-      color: #fcd34d;
-      border: none;
-      font-size: 1.2em;
-      padding: 4px 8px;
-      border-radius: 4px;
-      cursor: pointer;
-      box-shadow: 0 0 5px #00000080;
-      transition: background 0.2s;
-    }
-    .sheet-close-btn:hover {
-      background: #475569;
-    }
-
-  </style>
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-  <div class="floating-password" onclick="toggleSheetFrame()">🗝️</div>
-  <div id="sheet-frame" class="sheet-container" style="display: none;">
-    <div id="sheet-header" class="sheet-header">密碼總表 <button class="sheet-close-btn" onclick="toggleSheetFrame()">✖</button></div>
+  <!-- 載入動畫 -->
+  <div class="loader" id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">載入中...</div>
+  </div>
+
+  <div class="floating-password" role="button" tabindex="0" aria-label="開啟密碼總表">🗝️</div>
+  <a href="./timeline-v2.html" class="timeline-v2-btn" aria-label="產品上市時間表">📊 產品上市時間表</a>
+  <a href="./admin.html" class="admin-btn" aria-label="Timeline 管理後台">⚙️ 管理後台</a>
+  <div id="sheet-frame" class="sheet-container hidden">
+    <div id="sheet-header" class="sheet-header">密碼總表 <button class="sheet-close-btn" aria-label="關閉密碼總表">✖</button></div>
     <iframe src="https://docs.google.com/spreadsheets/d/1Mx5rYmUlGjdSavvT0TIlPBRHZkWsaav6oD8dmQpy4DE/edit?usp=sharing"
-      width="100%" height="100%" frameborder="0" style="flex-grow:1; border:none;">
+      width="100%" height="100%" frameborder="0" title="密碼總表">
     </iframe>
   </div>
-  <button id="scrollTopBtn" onclick="scrollToTop()">⬆ 返回頂部</button>
+  <button id="scrollTopBtn" aria-label="返回頂部">⬆ 返回頂部</button>
 
   <h1>常用連結</h1>
   <div class="container">
@@ -232,20 +68,6 @@
   </div>
   <footer>© 2025 翻轉點子 | Powered by GitHub Pages</footer>
 
-  <script>
-    function toggleSheetFrame() {
-      const frame = document.getElementById("sheet-frame");
-      frame.style.display = (frame.style.display === "none") ? "block" : "none";
-    }
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    window.onscroll = function() {
-      document.getElementById("scrollTopBtn").style.display =
-        document.documentElement.scrollTop > 100 ? "block" : "none";
-    }
-  
-    
-  </script>
+  <script src="./js/main.js"></script>
 </body>
 </html>

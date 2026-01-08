@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  background: #456990;
+  color: #fff;
+}
+
+/* .section SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section {
+  background: #f45b69;
+  padding: 50px 0;
+}
+
+.section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.timeline ol {
+  font-size: 0;
+  width: 100vw;
+  padding: 250px 0;
+  transition: all 1s;
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.timeline ol li:last-child {
+  width: 280px;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #f45b69;
+}
+
+.timeline ol li div {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 280px;
+  padding: 15px;
+  font-size: 1rem;
+  white-space: normal;
+  color: black;
+  background: white;
+}
+
+.timeline ol li div::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ol li:nth-child(odd) div {
+  top: -16px;
+  transform: translateY(-100%);
+}
+
+.timeline ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+.timeline ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+
+.timeline ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* TIMELINE ARROWS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline .arrows {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.timeline .arrows .arrow__prev {
+  margin-right: 20px;
+}
+
+.timeline .disabled {
+  opacity: 0.5;
+}
+
+.timeline .arrows img {
+  width: 45px;
+  height: 45px;
+}
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 900px) {
+  .timeline {
+    white-space: normal;
+    overflow-x: visible;
+    padding: 20px 0;
+  }
+
+  .timeline ol {
+    width: 100%;
+    padding: 0;
+    transform: none !important;
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .timeline ol::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #fff;
+  }
+
+  .timeline ol li {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    margin-left: 0;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .timeline ol li:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline ol li::before {
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #f45b69;
+    border: 3px solid #fff;
+    z-index: 1;
+  }
+
+  .timeline ol li:not(:last-child)::after {
+    display: none;
+  }
+
+  .timeline ol li div {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  .timeline ol li div::before {
+    display: none;
+  }
+
+  .timeline ol li:nth-child(odd) div,
+  .timeline ol li:nth-child(even) div {
+    transform: none;
+  }
+
+  .timeline .arrows {
+    display: none;
+  }
+
+  .section {
+    padding: 30px 0;
+  }
+
+  .section h1 {
+    font-size: 1.8rem;
+  }
+
+  .timeline-filters {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* FILTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background: rgba(69, 105, 144, 0.3);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.filter-btn.active {
+  background: #f45b69;
+  color: #fff;
+  border-color: #f45b69;
+  box-shadow: 0 0 15px rgba(244, 91, 105, 0.5);
+}
+
+.filter-btn:focus {
+  outline: 2px solid #f45b69;
+  outline-offset: 2px;
+}

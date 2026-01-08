@@ -1,0 +1,560 @@
+/* ============================================
+   管理後台樣式
+   ============================================ */
+
+/* 返回首頁按鈕 */
+.back-home-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #334155;
+  color: #fcd34d;
+  border: 2px solid #94a3b8;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 10px #0f172a;
+}
+
+.back-home-btn:hover {
+  background: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.back-home-btn:active {
+  transform: translateY(0);
+}
+
+.back-home-btn:focus {
+  outline: 2px solid #fcd34d;
+  outline-offset: 2px;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 選項卡 */
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #334155;
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  background: #334155;
+  color: #e2e8f0;
+  border: 2px solid #94a3b8;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  font-size: clamp(0.9em, 2vw, 1em);
+  border-bottom: none;
+}
+
+.tab-btn:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: #7dd3fc;
+  color: #0f172a;
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px #38bdf8cc;
+}
+
+.tab-btn:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* 內容區塊 */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 區塊樣式 */
+.admin-section {
+  background: rgba(51, 65, 85, 0.5);
+  border: 2px solid #94a3b8;
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.admin-section h2 {
+  color: #7dd3fc;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 10px;
+}
+
+.admin-section h3 {
+  color: #fcd34d;
+  margin: 20px 0 10px;
+  font-size: 1.2em;
+}
+
+/* 資料資訊 */
+.data-info {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+/* 批次刪除操作 */
+.batch-delete-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.batch-delete-actions .btn {
+  min-width: 120px;
+}
+
+.batch-delete-actions .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.batch-delete-actions .btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.data-info p {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 1.1em;
+}
+
+.data-info span {
+  color: #fcd34d;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* 資料表格 */
+.data-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.data-table thead {
+  background: #334155;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.data-table th {
+  padding: 15px;
+  text-align: left;
+  color: #fcd34d;
+  font-weight: bold;
+  border-bottom: 2px solid #38bdf8;
+}
+
+.data-table th input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #38bdf8;
+}
+
+.data-table td input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #38bdf8;
+}
+
+.data-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  color: #e2e8f0;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.status-badge.upcoming {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.status-badge.released {
+  background: #10b981;
+  color: #064e3b;
+}
+
+.status-badge.past {
+  background: #6b7280;
+  color: #111827;
+}
+
+/* 表單樣式 */
+.admin-form {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #7dd3fc;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 2px solid #94a3b8;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* 日期輸入樣式 */
+.form-group input[type="date"] {
+  position: relative;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+  opacity: 0.8;
+  padding: 5px;
+  margin-left: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23fcd34d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  filter: invert(1);
+}
+
+/* Firefox 日期輸入樣式 */
+.form-group input[type="date"]::-moz-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.form-group input[type="date"]::-moz-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* 日期輸入容器 */
+.date-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.date-input-wrapper input[type="date"] {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 200px;
+  font-family: 'Courier New', monospace;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* 按鈕樣式 */
+.btn {
+  padding: 12px 24px;
+  border: 2px solid;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1em;
+}
+
+.btn-primary {
+  background: #7dd3fc;
+  color: #0f172a;
+  border-color: #38bdf8;
+}
+
+.btn-primary:hover {
+  background: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn-secondary {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #dc2626;
+  padding: 6px 12px;
+  font-size: 0.9em;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.btn:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* 批次輸入說明 */
+.batch-help {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.batch-help p {
+  color: #e2e8f0;
+  margin: 10px 0;
+}
+
+.batch-help code {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #fcd34d;
+  font-family: 'Courier New', monospace;
+}
+
+.batch-help pre {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  color: #7dd3fc;
+  font-family: 'Courier New', monospace;
+  margin: 10px 0;
+  border: 1px solid #94a3b8;
+}
+
+/* 批次輸入結果 */
+.batch-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+}
+
+.batch-result.success {
+  background: rgba(16, 185, 129, 0.2);
+  border: 2px solid #10b981;
+  color: #10b981;
+  display: block;
+}
+
+.batch-result.error {
+  background: rgba(239, 68, 68, 0.2);
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  display: block;
+}
+
+/* 下載區塊 */
+.download-info {
+  margin-bottom: 30px;
+}
+
+.download-info p {
+  color: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.download-info code {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #fcd34d;
+  font-family: 'Courier New', monospace;
+}
+
+.data-preview {
+  background: rgba(15, 23, 42, 0.8);
+  border: 2px solid #94a3b8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.data-preview pre {
+  margin: 0;
+  color: #7dd3fc;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 20px 10px;
+  }
+
+  .admin-section {
+    padding: 20px;
+  }
+
+  .admin-tabs {
+    gap: 5px;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 0.85em;
+  }
+
+  .data-table {
+    font-size: 0.9em;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px 10px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .back-home-btn {
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+
+  .date-input-wrapper::after {
+    right: 10px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-section h2 {
+    font-size: 1.5em;
+  }
+
+  .data-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .batch-help pre {
+    font-size: 0.85em;
+    padding: 10px;
+  }
+}

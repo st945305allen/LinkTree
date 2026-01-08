@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>產品上市時間表 v2 - 常用連結</title>
+  <link rel="icon" href="./favicon.png" type="image/png" />
+  <link rel="stylesheet" href="./css/timeline-v2.css" />
+</head>
+<body>
+  <a href="./index.html" class="back-home-btn" aria-label="返回首頁" style="position: fixed; top: 20px; left: 20px; z-index: 1000; background-color: #334155; color: #fcd34d; border: 2px solid #94a3b8; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;">← 返回首頁</a>
+
+  <section class="section intro">
+    <div class="container">
+      <h1>產品上市時間表</h1>
+    </div>
+  </section>
+
+  <div class="timeline-filters">
+    <button class="filter-btn active" data-game="all">全部</button>
+  </div>
+
+  <section class="timeline">
+    <ol id="timeline-list">
+      <!-- Timeline 內容將由 JavaScript 動態生成 -->
+    </ol>
+
+    <div class="arrows">
+      <button class="arrow arrow__prev disabled" disabled>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
+      </button>
+      <button class="arrow arrow__next">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
+      </button>
+    </div>
+  </section>
+
+  <script src="./js/timeline-v2.js"></script>
+</body>
+</html>

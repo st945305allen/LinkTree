@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timeline 管理後台 - 常用連結</title>
+  <link rel="icon" href="./favicon.png" type="image/png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+<body>
+  <!-- 載入動畫 -->
+  <div class="loader" id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">載入中...</div>
+  </div>
+
+  <!-- 返回首頁按鈕 -->
+  <a href="./index.html" class="back-home-btn" aria-label="返回首頁">← 返回首頁</a>
+
+  <h1>Timeline 管理後台</h1>
+  
+  <div class="admin-container">
+    <!-- 功能選項卡 -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" data-tab="view">檢視資料</button>
+      <button class="tab-btn" data-tab="add">新增資料</button>
+      <button class="tab-btn" data-tab="batch">批次輸入</button>
+      <button class="tab-btn" data-tab="download">下載 JSON</button>
+    </div>
+
+    <!-- 檢視資料區塊 -->
+    <div id="view-tab" class="tab-content active">
+      <div class="admin-section">
+        <h2>目前資料</h2>
+        <div class="data-info">
+          <p>總筆數：<span id="total-count">0</span></p>
+          <p>今天及以後：<span id="upcoming-count">0</span></p>
+          <p>已選擇：<span id="selected-count">0</span></p>
+        </div>
+        <div class="batch-delete-actions">
+          <button type="button" class="btn btn-secondary" id="select-all-btn">全選</button>
+          <button type="button" class="btn btn-secondary" id="deselect-all-btn">取消全選</button>
+          <button type="button" class="btn btn-secondary" id="select-past-btn">選擇已上市</button>
+          <button type="button" class="btn btn-danger" id="batch-delete-btn" disabled>批次刪除</button>
+          <button type="button" class="btn btn-danger" id="delete-past-btn">批次刪除已上市</button>
+        </div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 40px;">
+                  <input type="checkbox" id="select-all-checkbox" />
+                </th>
+                <th>遊戲</th>
+                <th>彈數</th>
+                <th>上市時間</th>
+                <th>狀態</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="data-table-body">
+              <!-- 資料將由 JavaScript 動態生成 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 新增資料區塊 -->
+    <div id="add-tab" class="tab-content">
+      <div class="admin-section">
+        <h2>新增單筆資料</h2>
+        <form id="add-form" class="admin-form">
+          <div class="form-group">
+            <label for="game-input">遊戲名稱</label>
+            <input type="text" id="game-input" required placeholder="例如：數碼寶貝卡牌遊戲" />
+          </div>
+          <div class="form-group">
+            <label for="set-input">彈數</label>
+            <input type="text" id="set-input" required placeholder="例如：BT-01" />
+          </div>
+          <div class="form-group">
+            <label for="date-input">上市時間</label>
+            <div class="date-input-wrapper">
+              <input type="date" id="date-input" required />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">新增</button>
+            <button type="reset" class="btn btn-secondary">重置</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 批次輸入區塊 -->
+    <div id="batch-tab" class="tab-content">
+      <div class="admin-section">
+        <h2>批次輸入</h2>
+        <div class="batch-help">
+          <h3>輸入格式說明</h3>
+          <p>每行一筆資料，格式：<code>遊戲名稱,彈數,上市時間(YYYY-MM-DD)</code></p>
+          <p>範例：</p>
+          <pre>數碼寶貝卡牌遊戲,BT-14,2025-05-30
+數碼寶貝卡牌遊戲,EX-14,2025-07-25</pre>
+        </div>
+        <form id="batch-form" class="admin-form">
+          <div class="form-group">
+            <label for="batch-input">批次資料</label>
+            <textarea 
+              id="batch-input" 
+              rows="10" 
+              placeholder="請輸入資料，每行一筆&#10;格式：遊戲名稱,彈數,上市時間(YYYY-MM-DD)&#10;&#10;範例：&#10;數碼寶貝卡牌遊戲,BT-14,2025-05-30&#10;數碼寶貝卡牌遊戲,EX-14,2025-07-25"
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">批次新增</button>
+            <button type="button" class="btn btn-secondary" id="clear-batch">清空</button>
+          </div>
+        </form>
+        <div id="batch-result" class="batch-result"></div>
+      </div>
+    </div>
+
+    <!-- 下載 JSON 區塊 -->
+    <div id="download-tab" class="tab-content">
+      <div class="admin-section">
+        <h2>下載 JSON 檔案</h2>
+        <div class="download-info">
+          <p>下載目前的產品資料為 JSON 檔案，可用於更新 GitHub 上的 <code>data/products.json</code></p>
+          <div class="data-preview">
+            <h3>資料預覽</h3>
+            <pre id="json-preview"></pre>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" id="download-btn">下載 JSON 檔案</button>
+          <button type="button" class="btn btn-secondary" id="copy-json-btn">複製 JSON</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 翻轉點子 | Powered by GitHub Pages</footer>
+
+  <script src="./js/admin.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

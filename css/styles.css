@@ -1,0 +1,604 @@
+/* ============================================
+   基礎樣式
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://hk.digimoncard.com/images/products/goods/tamers-evolution-box/pc/mv.png?250318');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 修復：移除衝突的定位屬性，只保留 inset: 0 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2em, 5vw, 3em);
+  font-weight: bold;
+  color: #fcd34d;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px #78350f;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.group {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1240px;
+}
+
+.section {
+  width: 100%;
+  max-width: 280px;
+  min-width: 250px;
+  flex: 1 1 250px;
+}
+
+.section h2 {
+  font-size: clamp(1.2em, 3vw, 1.5em);
+  color: #7dd3fc;
+  border-bottom: 1px solid #3b82f6;
+  margin-bottom: 16px;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.link-item {
+  background: #334155;
+  border: 2px solid #94a3b8;
+  border-radius: 12px;
+  padding: 14px 20px;
+  text-align: left;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 5px #0f172a;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.link-item a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: clamp(1em, 2.5vw, 1.1em);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.link-item img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.link-item:hover {
+  background: #475569;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #38bdf8cc;
+}
+
+.link-item:focus-within {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   浮動按鈕
+   ============================================ */
+.floating-password {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #334155;
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #0f172a;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.floating-password:hover {
+  background: #475569;
+  transform: scale(1.1);
+}
+
+.floating-password:active {
+  transform: scale(0.95);
+}
+
+/* Timeline v2 按鈕 */
+.timeline-v2-btn {
+  position: fixed;
+  top: 20px;
+  right: 480px;
+  background: #334155;
+  color: #fcd34d;
+  border: 2px solid #94a3b8;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(0.9em, 2vw, 1em);
+  box-shadow: 0 0 10px #0f172a;
+}
+
+.timeline-v2-btn:hover {
+  background: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.timeline-v2-btn:active {
+  transform: translateY(0);
+}
+
+.timeline-v2-btn:focus {
+  outline: 2px solid #fcd34d;
+  outline-offset: 2px;
+}
+
+/* 管理後台按鈕 */
+.admin-btn {
+  position: fixed;
+  top: 20px;
+  right: 660px;
+  background: #334155;
+  color: #fcd34d;
+  border: 2px solid #94a3b8;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(0.9em, 2vw, 1em);
+  box-shadow: 0 0 10px #0f172a;
+}
+
+.admin-btn:hover {
+  background: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.admin-btn:active {
+  transform: translateY(0);
+}
+
+.admin-btn:focus {
+  outline: 2px solid #fcd34d;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Sheet 容器
+   ============================================ */
+.sheet-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 90%;
+  max-width: 960px;
+  height: 80vh;
+  min-height: 400px;
+  border: 2px solid #94a3b8;
+  border-radius: 12px;
+  background: #fff;
+  z-index: 999;
+  overflow: hidden;
+  box-shadow: 0 0 15px #0f172a;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-container.hidden {
+  display: none;
+}
+
+.sheet-header {
+  background: #334155;
+  color: #fcd34d;
+  padding: 8px 16px;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.sheet-close-btn {
+  background: #334155;
+  color: #fcd34d;
+  border: none;
+  font-size: 1.2em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #00000080;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.sheet-close-btn:hover {
+  background: #475569;
+}
+
+.sheet-close-btn:focus {
+  outline: 2px solid #fcd34d;
+  outline-offset: 2px;
+}
+
+.sheet-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  flex-grow: 1;
+}
+
+/* ============================================
+   返回頂部按鈕
+   ============================================ */
+#scrollTopBtn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #334155;
+  color: #fcd34d;
+  border: 2px solid #94a3b8;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s, opacity 0.3s;
+  font-size: clamp(0.9em, 2vw, 1em);
+}
+
+#scrollTopBtn:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}
+
+#scrollTopBtn:active {
+  transform: translateY(0);
+}
+
+#scrollTopBtn:focus {
+  outline: 2px solid #fcd34d;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  font-size: clamp(0.8em, 2vw, 0.9em);
+  color: #94a3b8;
+  width: 100%;
+}
+
+/* 確保內容區域可以推 footer 到底部 */
+.container {
+  flex: 1;
+}
+
+/* ============================================
+   響應式設計
+   ============================================ */
+
+/* 平板裝置 (768px 以下) */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  .group {
+    gap: 20px;
+  }
+
+  .section {
+    max-width: 100%;
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .sheet-container {
+    width: 95%;
+    height: 85vh;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+
+  .floating-password {
+    top: 15px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3em;
+  }
+
+  .timeline-v2-btn {
+    top: 15px;
+    right: 70px;
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+
+  .admin-btn {
+    top: 70px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+
+  #scrollTopBtn {
+    top: 70px;
+    right: 15px;
+    padding: 6px 10px;
+  }
+}
+
+/* 手機裝置 (480px 以下) */
+@media (max-width: 480px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    gap: 25px;
+  }
+
+  .group {
+    gap: 15px;
+  }
+
+  .link-item {
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+
+  .sheet-container {
+    width: 100%;
+    height: 90vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .floating-password {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+  }
+
+  .timeline-v2-btn {
+    top: 10px;
+    right: 60px;
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  .admin-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  #scrollTopBtn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 8px;
+    font-size: 0.85em;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding: 15px 0;
+  }
+}
+
+/* 超小螢幕 (360px 以下) */
+@media (max-width: 360px) {
+  body {
+    padding: 10px 8px;
+  }
+
+  .link-item a {
+    font-size: 0.95em;
+  }
+
+  .section h2 {
+    font-size: 1.1em;
+  }
+}
+
+/* 大螢幕優化 (1920px 以上) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .group {
+    max-width: 1560px;
+  }
+
+  .section {
+    max-width: 320px;
+  }
+}
+
+/* 橫向模式優化 */
+@media (orientation: landscape) and (max-height: 600px) {
+  .sheet-container {
+    height: 95vh;
+  }
+}
+
+/* ============================================
+   載入動畫
+   ============================================ */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(148, 163, 184, 0.3);
+  border-top-color: #7dd3fc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 20px;
+  color: #7dd3fc;
+  font-size: 1.2em;
+  font-weight: bold;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 頁面內容淡入動畫 */
+body.loaded .container,
+body.loaded h1,
+body.loaded footer {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 連結項目淡入動畫 */
+body.loaded .link-item {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+body.loaded .section:nth-child(1) .link-item {
+  animation-delay: 0.1s;
+}
+
+body.loaded .section:nth-child(2) .link-item {
+  animation-delay: 0.2s;
+}
+
+body.loaded .section:nth-child(3) .link-item {
+  animation-delay: 0.3s;
+}
+
+body.loaded .section:nth-child(4) .link-item {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
