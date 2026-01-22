@@ -40,6 +40,9 @@
 
       // 渲染 Timeline
       renderTimeline();
+      
+      // 渲染表格
+      renderTable();
     } catch (error) {
       console.error("載入產品資料失敗:", error);
     }
@@ -91,6 +94,7 @@
 
     // 重新渲染
     renderTimeline();
+    renderTable();
   }
 
   // 計算兩個日期之間的天數
@@ -312,6 +316,86 @@
     });
   }
 
+  // 渲染表格（依月份整理）
+  function renderTable() {
+    const tableContainer = document.getElementById("products-table-container");
+    if (!tableContainer) return;
+
+    if (filteredData.length === 0) {
+      tableContainer.innerHTML = "<p style='text-align: center; color: #94a3b8; padding: 20px;'>目前沒有資料</p>";
+      return;
+    }
+
+    // 按月份分組
+    const groupedByMonth = {};
+    filteredData.forEach((item) => {
+      const date = new Date(item.上市時間);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const monthKey = `${year}-${String(month).padStart(2, "0")}`;
+      
+      if (!groupedByMonth[monthKey]) {
+        groupedByMonth[monthKey] = [];
+      }
+      groupedByMonth[monthKey].push(item);
+    });
+
+    // 按月份排序
+    const sortedMonths = Object.keys(groupedByMonth).sort();
+
+    // 月份名稱
+    const monthNames = ["一月", "二月", "三月", "四月", "五月", "六月", 
+                       "七月", "八月", "九月", "十月", "十一月", "十二月"];
+
+    let tableHTML = '<div class="products-table-wrapper">';
+    
+    sortedMonths.forEach((monthKey) => {
+      const [year, month] = monthKey.split("-");
+      const monthName = monthNames[parseInt(month) - 1];
+      const items = groupedByMonth[monthKey];
+      
+      // 按日期排序
+      items.sort((a, b) => {
+        return new Date(a.上市時間) - new Date(b.上市時間);
+      });
+
+      tableHTML += `
+        <div class="month-table-group">
+          <h3 class="month-header">${year}年${monthName}</h3>
+          <table class="products-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>遊戲</th>
+                <th>彈數</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      items.forEach((item) => {
+        const date = new Date(item.上市時間);
+        const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+        tableHTML += `
+          <tr>
+            <td data-label="日期">${dateStr}</td>
+            <td data-label="遊戲">${item.遊戲}</td>
+            <td data-label="彈數">${item.彈數}</td>
+          </tr>
+        `;
+      });
+
+      tableHTML += `
+            </tbody>
+          </table>
+        </div>
+      `;
+    });
+
+    tableHTML += '</div>';
+    tableContainer.innerHTML = tableHTML;
+  }
+
   // 視窗大小改變時重新初始化（切換桌機/手機模式）
   let resizeTimer;
   window.addEventListener("resize", () => {
@@ -320,6 +404,7 @@
       // 如果已經有資料，重新初始化
       if (filteredData.length > 0) {
         renderTimeline();
+        renderTable();
       }
     }, 250);
   });

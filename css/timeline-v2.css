@@ -311,3 +311,213 @@ body {
   outline: 2px solid #f45b69;
   outline-offset: 2px;
 }
+
+/* TABLE SECTION STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.table-section {
+  background: #456990;
+  padding: 50px 0;
+  min-height: 400px;
+}
+
+.table-section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.table-section h2 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.products-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.month-table-group {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.month-header {
+  font-size: 1.5rem;
+  color: #f45b69;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(244, 91, 105, 0.3);
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.products-table thead {
+  background: rgba(244, 91, 105, 0.3);
+}
+
+.products-table th {
+  padding: 14px 16px;
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 2px solid rgba(244, 91, 105, 0.5);
+  vertical-align: middle;
+}
+
+.products-table th:nth-child(1) {
+  width: 25%;
+  text-align: center;
+}
+
+.products-table th:nth-child(2) {
+  width: 45%;
+}
+
+.products-table th:nth-child(3) {
+  width: 30%;
+  text-align: center;
+}
+
+.products-table td {
+  padding: 14px 16px;
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.products-table td:nth-child(1) {
+  text-align: center;
+  font-weight: 500;
+}
+
+.products-table td:nth-child(2) {
+  text-align: left;
+}
+
+.products-table td:nth-child(3) {
+  text-align: center;
+  font-weight: 500;
+}
+
+.products-table tbody tr {
+  transition: background 0.2s;
+}
+
+.products-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.products-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.products-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.products-table tbody tr:nth-child(even):hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 響應式表格 */
+@media screen and (max-width: 768px) {
+  .table-section {
+    padding: 30px 0;
+  }
+
+  .table-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .month-table-group {
+    padding: 18px;
+    margin-bottom: 25px;
+  }
+
+  .month-header {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+
+  .products-table {
+    font-size: 0.9rem;
+    table-layout: auto;
+  }
+
+  .products-table th {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .products-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* 小螢幕時表格改為卡片式 */
+  @media screen and (max-width: 480px) {
+    .products-table,
+    .products-table thead,
+    .products-table tbody,
+    .products-table th,
+    .products-table td,
+    .products-table tr {
+      display: block;
+    }
+
+    .products-table thead {
+      display: none;
+    }
+
+    .products-table tr {
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .products-table td {
+      border: none;
+      padding: 8px 0;
+      position: relative;
+      padding-left: 50%;
+      text-align: left !important;
+    }
+
+    .products-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      color: #f45b69;
+    }
+
+    .products-table td:nth-of-type(1)::before { content: "日期："; }
+    .products-table td:nth-of-type(2)::before { content: "遊戲："; }
+    .products-table td:nth-of-type(3)::before { content: "彈數："; }
+  }
+}
