@@ -3,44 +3,8 @@
  * 處理頁面互動功能
  */
 
-// 載入動畫控制
-function initLoader() {
-  const loader = document.getElementById('loader');
-  
-  if (!loader) {
-    return;
-  }
-
-  // 確保至少顯示 800ms 的載入動畫
-  const minLoadTime = 800;
-  const startTime = Date.now();
-
-  function hideLoader() {
-    const elapsed = Date.now() - startTime;
-    const remaining = Math.max(0, minLoadTime - elapsed);
-
-    setTimeout(function() {
-      loader.classList.add('hidden');
-      document.body.classList.add('loaded');
-      
-      // 動畫完成後移除 loader 元素（可選）
-      setTimeout(function() {
-        loader.remove();
-      }, 500);
-    }, remaining);
-  }
-
-  // 等待所有資源載入完成
-  if (document.readyState === 'complete') {
-    hideLoader();
-  } else {
-    window.addEventListener('load', hideLoader);
-  }
-}
-
 // DOM 載入完成後初始化
 document.addEventListener('DOMContentLoaded', function() {
-  initLoader();
   initScrollTopButton();
   initSheetFrame();
   initDragAndDrop();
