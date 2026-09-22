@@ -144,78 +144,6 @@ h1 {
   transform: scale(0.95);
 }
 
-/* Timeline v2 按鈕 */
-.timeline-v2-btn {
-  position: fixed;
-  top: 20px;
-  right: 480px;
-  background: #334155;
-  color: #fcd34d;
-  border: 2px solid #94a3b8;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: clamp(0.9em, 2vw, 1em);
-  box-shadow: 0 0 10px #0f172a;
-}
-
-.timeline-v2-btn:hover {
-  background: #475569;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-}
-
-.timeline-v2-btn:active {
-  transform: translateY(0);
-}
-
-.timeline-v2-btn:focus {
-  outline: 2px solid #fcd34d;
-  outline-offset: 2px;
-}
-
-/* 管理後台按鈕 */
-.admin-btn {
-  position: fixed;
-  top: 20px;
-  right: 660px;
-  background: #334155;
-  color: #fcd34d;
-  border: 2px solid #94a3b8;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: clamp(0.9em, 2vw, 1em);
-  box-shadow: 0 0 10px #0f172a;
-}
-
-.admin-btn:hover {
-  background: #475569;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-}
-
-.admin-btn:active {
-  transform: translateY(0);
-}
-
-.admin-btn:focus {
-  outline: 2px solid #fcd34d;
-  outline-offset: 2px;
-}
-
 /* ============================================
    Sheet 容器
    ============================================ */
@@ -372,23 +300,9 @@ footer {
     font-size: 1.3em;
   }
 
-  .timeline-v2-btn {
+  #scrollTopBtn {
     top: 15px;
     right: 70px;
-    padding: 8px 12px;
-    font-size: 0.85em;
-  }
-
-  .admin-btn {
-    top: 70px;
-    right: 15px;
-    padding: 8px 12px;
-    font-size: 0.85em;
-  }
-
-  #scrollTopBtn {
-    top: 70px;
-    right: 15px;
     padding: 6px 10px;
   }
 }
@@ -433,23 +347,9 @@ footer {
     font-size: 1.2em;
   }
 
-  .timeline-v2-btn {
+  #scrollTopBtn {
     top: 10px;
     right: 60px;
-    padding: 6px 10px;
-    font-size: 0.8em;
-  }
-
-  .admin-btn {
-    top: 60px;
-    right: 10px;
-    padding: 6px 10px;
-    font-size: 0.8em;
-  }
-
-  #scrollTopBtn {
-    top: 60px;
-    right: 10px;
     padding: 6px 8px;
     font-size: 0.85em;
   }
@@ -494,111 +394,5 @@ footer {
 @media (orientation: landscape) and (max-height: 600px) {
   .sheet-container {
     height: 95vh;
-  }
-}
-
-/* ============================================
-   載入動畫
-   ============================================ */
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-}
-
-.loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.loader-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid rgba(148, 163, 184, 0.3);
-  border-top-color: #7dd3fc;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-.loader-text {
-  margin-top: 20px;
-  color: #7dd3fc;
-  font-size: 1.2em;
-  font-weight: bold;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* 頁面內容淡入動畫 */
-body.loaded .container,
-body.loaded h1,
-body.loaded footer {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 連結項目淡入動畫 */
-body.loaded .link-item {
-  animation: fadeIn 0.6s ease-out;
-  animation-fill-mode: both;
-}
-
-body.loaded .section:nth-child(1) .link-item {
-  animation-delay: 0.1s;
-}
-
-body.loaded .section:nth-child(2) .link-item {
-  animation-delay: 0.2s;
-}
-
-body.loaded .section:nth-child(3) .link-item {
-  animation-delay: 0.3s;
-}
-
-body.loaded .section:nth-child(4) .link-item {
-  animation-delay: 0.4s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
