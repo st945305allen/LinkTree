@@ -1,0 +1,41 @@
+[
+  {
+    "title": "店內營運",
+    "links": [
+      { "name": "預購待取", "url": "https://docs.google.com/spreadsheets/d/1lWBEbnCbAI5rxZZRJxeaU_nofaOlkSl34AnECyyPDH0/edit?gid=0#gid=0" },
+      { "name": "會員表單", "url": "https://docs.google.com/spreadsheets/d/1y79KRFTH-tM4BylTvQI2-nMXSJpmEY-kwOGByoz2Ge4/edit?usp=sharing" },
+      { "name": "桌遊價格", "url": "https://docs.google.com/spreadsheets/d/1VukN9_0hQ2Es0w8vrJrn9ih4vm1cxJjXlVAE2hXEdm8/edit?usp=sharing" },
+      { "name": "待辦事項", "url": "https://docs.google.com/spreadsheets/d/1ONsnj92FLS2XdFev6TNDevlu5HW1uy2Scp0v-0KTpM/edit?usp=sharing" },
+      { "name": "雲湧購物網", "url": "https://www.sakasaka.com.tw/shop/" }
+    ]
+  },
+  {
+    "title": "賽事回報",
+    "links": [
+      { "name": "自訂賽事網站", "url": "https://challonge.com/zh_CN/dashboard" },
+      { "name": "寶可夢活動回報", "url": "https://event.asia.pokemon-card.com/login/tw" },
+      { "name": "萬代 TCG+", "url": "https://distributor.bandai-tcg-plus.com/#/event_series_list?default=true" },
+      { "name": "GA 賽事網", "url": "https://omni.gatcg.com/" }
+    ]
+  },
+  {
+    "title": "DTCG資源",
+    "links": [
+      { "name": "數碼卡片遊戲資料庫", "url": "https://app.digicamoe.cn/" },
+      { "name": "路基亞數碼裝置", "url": "https://rugiacreation.com/dcg/search" },
+      { "name": "日文官方網站規則 Q&A", "url": "https://digimoncard.com/rule/" },
+      { "name": "Digimon Meta", "url": "https://digimonmeta.com/deck-list/" },
+      { "name": "推特優勝牌組", "url": "https://digimon-cg-guide.com/winner" }
+    ]
+  },
+  {
+    "title": "查價網",
+    "links": [
+      { "name": "數碼 悠遊亭", "url": "https://yuyu-tei.jp/top/digi" },
+      { "name": "UA 悠遊亭", "url": "https://yuyu-tei.jp/top/ua" },
+      { "name": "WS 悠遊亭", "url": "https://yuyu-tei.jp/top/ws" },
+      { "name": "海賊 悠遊亭", "url": "https://yuyu-tei.jp/top/opc" },
+      { "name": "GA TCG Player", "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/grand-archive-tcg" }
+    ]
+  }
+]
