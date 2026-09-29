@@ -8,7 +8,53 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollTopButton();
   initSheetFrame();
   initDragAndDrop();
+  loadLinks();
 });
+
+/**
+ * 從 data/links.json 讀取連結資料並渲染成連結區塊
+ * 要新增/修改/刪除連結，只需編輯 data/links.json，不需要改這裡的程式碼
+ */
+function loadLinks() {
+  const container = document.getElementById('link-groups');
+
+  if (!container) {
+    return;
+  }
+
+  fetch('./data/links.json')
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error('無法載入連結資料：' + response.status);
+      }
+      return response.json();
+    })
+    .then(function(sections) {
+      container.innerHTML = sections.map(renderSection).join('');
+    })
+    .catch(function(error) {
+      console.error('載入連結資料失敗', error);
+      container.innerHTML = '<p>連結載入失敗，請稍後再試。</p>';
+    });
+}
+
+function renderSection(section) {
+  const links = section.links.map(renderLinkItem).join('');
+  return '<div class="section"><h2>' + escapeHtml(section.title) + '</h2>' + links + '</div>';
+}
+
+function renderLinkItem(link) {
+  const faviconUrl = 'https://www.google.com/s2/favicons?sz=32&domain_url=' + encodeURIComponent(link.url);
+  return '<div class="link-item"><a href="' + escapeHtml(link.url) + '" target="_blank">' +
+    '<img src="' + escapeHtml(faviconUrl) + '" loading="lazy">' +
+    escapeHtml(link.name) + '</a></div>';
+}
+
+function escapeHtml(value) {
+  const div = document.createElement('div');
+  div.textContent = value;
+  return div.innerHTML;
+}
 
 /**
  * 初始化返回頂部按鈕
