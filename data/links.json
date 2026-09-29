@@ -3,9 +3,8 @@
     "title": "店內營運",
     "links": [
       { "name": "預購待取", "url": "https://docs.google.com/spreadsheets/d/1lWBEbnCbAI5rxZZRJxeaU_nofaOlkSl34AnECyyPDH0/edit?gid=0#gid=0" },
-      { "name": "會員表單", "url": "https://docs.google.com/spreadsheets/d/1y79KRFTH-tM4BylTvQI2-nMXSJpmEY-kwOGByoz2Ge4/edit?usp=sharing" },
-      { "name": "桌遊價格", "url": "https://docs.google.com/spreadsheets/d/1VukN9_0hQ2Es0w8vrJrn9ih4vm1cxJjXlVAE2hXEdm8/edit?usp=sharing" },
-      { "name": "待辦事項", "url": "https://docs.google.com/spreadsheets/d/1ONsnj92FLS2XdFev6TNDevlu5HW1uy2Scp0v-0KTpM/edit?usp=sharing" },
+      { "name": "會員表單", "url": "https://script.google.com/macros/s/AKfycbxte-HKDKR7ilbOEqe4Ikats-9oOqcP0UM-4SIAsFBmo-p3I57aXiyBoUK34QUcx9F0/exec" },
+      { "name": "桌遊價格", "url": "https://script.google.com/macros/s/AKfycbyeUjNvB3W5I6GUlE24EsbZS889O__Xmmipe05ocQB-Qceg-h4ilOQlW1Gfi5EN4nJX/exec" },
       { "name": "雲湧購物網", "url": "https://www.sakasaka.com.tw/shop/" }
     ]
   },
@@ -15,6 +14,8 @@
       { "name": "自訂賽事網站", "url": "https://challonge.com/zh_CN/dashboard" },
       { "name": "寶可夢活動回報", "url": "https://event.asia.pokemon-card.com/login/tw" },
       { "name": "萬代 TCG+", "url": "https://distributor.bandai-tcg-plus.com/#/event_series_list?default=true" },
+      { "name": "萬代 戰棋", "url": "https://www.bandai-tabletop-games.com/shop/login" },
+      { "name": "陀螺比賽產生", "url": "https://beybladeai.com/" },
       { "name": "GA 賽事網", "url": "https://omni.gatcg.com/" }
     ]
   },
